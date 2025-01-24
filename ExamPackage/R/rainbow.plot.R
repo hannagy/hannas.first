@@ -1,6 +1,10 @@
-ranbow_plot <- function(df){
-  #plot df
-  hist(df, main="You created another wonderful plot, You Rainbow Child", col=rainbow(30), border="pink")
+ranbow_plot <- function(data){
+  #check if input is numeric
+  if (!is.numeric(data)) {
+    stop("Input a numeric vector, you Unicorn Jockey")
+  }
+  #plot data
+  hist(data, main="You created another wonderful plot, You Rainbow Child", col=rainbow(30), border="pink")
   #numeric summary
-  data.frame(min=min(df), median=median(df), mean=mean(df), max=max(df))
+  return(data.frame(min=min(data), median=median(data), mean=mean(data), max=max(data)))
 }
